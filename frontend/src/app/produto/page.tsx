@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { getContacts, type Contact } from "@/service/contact-service";
 import { useUserStore } from "@/store/use-user-store";
-import type { Contact } from "@/lib/mock-backend";
 
 export default function ProdutoPage() {
   const router = useRouter();
@@ -25,13 +25,7 @@ export default function ProdutoPage() {
         setLoadingContacts(true);
         setError("");
 
-        const response = await fetch("/api/contatos");
-
-        if (!response.ok) {
-          throw new Error("Não foi possível carregar os contatos.");
-        }
-
-        const data = (await response.json()) as Contact[];
+        const data = await getContacts();
         setContacts(data);
       } catch (contactError) {
         setError(

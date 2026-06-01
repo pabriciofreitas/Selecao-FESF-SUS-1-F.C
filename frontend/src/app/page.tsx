@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { loginWithGoogle } from "@/service/auth-service";
 import { useUserStore } from "@/store/use-user-store";
 
 export default function Home() {
@@ -15,15 +16,7 @@ export default function Home() {
       setLoading(true);
       setError("");
 
-      const response = await fetch("/api/auth/google", {
-        method: "POST",
-      });
-
-      if (!response.ok) {
-        throw new Error("Falha ao autenticar com Google mockado.");
-      }
-
-      const user = await response.json();
+      const user = await loginWithGoogle();
       setUser(user);
       router.push("/produto");
     } catch (loginError) {
