@@ -15,31 +15,37 @@ Caso a versão seja inferior à 3.14.0, atualize o Python antes de prosseguir.
 
 ## Setup
 
-1. Criar ambiente virtual:
+1. Criar o arquivo de variaveis de ambiente:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+2. Criar ambiente virtual:
 
 ```powershell
 python -m venv .venv
 ```
 
-2. Ativar ambiente virtual (PowerShell):
+3. Ativar ambiente virtual (PowerShell):
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-3. Atualizar o pip:
+4. Atualizar o pip:
 
 ```powershell
 python -m pip install --upgrade pip
 ```
 
-4. Instalar dependências:
+5. Instalar dependências:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-5. Rodar a API:
+6. Rodar a API:
 
 ```powershell
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
