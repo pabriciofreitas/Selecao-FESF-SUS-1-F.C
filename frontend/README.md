@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend (Next.js + React)
 
-## Getting Started
+## Requisitos
 
-First, run the development server:
+- Node.js **20 ou superior**
+- NPM instalado
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Verifique sua versao do Node.js:
+
+```powershell
+node --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Verifique sua versao do NPM:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```powershell
+npm --version
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Caso a versao do Node.js seja inferior a 20, atualize o Node antes de prosseguir.
 
-## Learn More
+## Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. Instalar dependencias:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```powershell
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Criar o arquivo de variaveis de ambiente:
 
-## Deploy on Vercel
+```powershell
+Copy-Item .env.example .env
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Conferir a URL da API no arquivo `.env`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
+
+4. Rodar o frontend:
+
+```powershell
+npm run dev
+```
+
+5. Acessar a aplicacao:
+
+```text
+http://localhost:3000
+```
+
+## Scripts
+
+- `npm run dev`: inicia o servidor de desenvolvimento
+- `npm run build`: gera a build de producao
+- `npm run start`: inicia a aplicacao em modo producao apos o build
+- `npm run lint`: executa o ESLint
+
+## Rotas
+
+- `/`
+- `/produto`
+
+> **Importante:** Antes de usar o frontend, rode o backend em `http://localhost:8000`.
