@@ -8,7 +8,7 @@ export const  foto: string = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAA
 export const mockUser: User = {
   name: "Pabricio Freitas",
   photoUrl: foto,
-  url: foto,
+  url: '+55 11 98888-1111',
 };
 
 export const mockContacts: Contact[] = [
