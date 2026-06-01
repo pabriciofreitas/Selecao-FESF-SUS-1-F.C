@@ -1,5 +1,18 @@
 # Backend (FastAPI + SQLAlchemy)
 
+## Requisitos
+
+- Python **3.14.0 ou superior**
+- Pip atualizado
+
+Verifique sua versão do Python:
+
+```powershell
+python --version
+```
+
+Caso a versão seja inferior à 3.14.0, atualize o Python antes de prosseguir.
+
 ## Setup
 
 1. Criar ambiente virtual:
@@ -14,13 +27,19 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-3. Instalar dependências:
+3. Atualizar o pip:
+
+```powershell
+python -m pip install --upgrade pip
+```
+
+4. Instalar dependências:
 
 ```powershell
 pip install -r requirements.txt
 ```
 
-4. Rodar a API:
+5. Rodar a API:
 
 ```powershell
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
@@ -31,3 +50,5 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 - GET `/api/contatos`
 - POST `/api/auth/google`
 - GET `/health`
+
+> **Importante:** Este projeto requer **Python 3.14.0 ou superior**.
